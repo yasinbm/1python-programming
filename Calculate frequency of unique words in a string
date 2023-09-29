@@ -1,0 +1,16 @@
+def char_count(s):
+    """
+    Calculate frequency of unique words in a string
+    :param s: input string by user
+    :Returns: A dictionary of characters frequency
+    :Examples:
+    >>> count_char('abcaa')
+      {'a': 3, 'b': 1, 'c': 1}
+    """
+    my_dict = {}
+    for char in s:
+        my_dict[char] = my_dict.get(char, 0) + 1
+    return my_dict  
+
+  my_str = 'abcdefgabcdefg'
+  char_count(my_str)

@@ -1,0 +1,34 @@
+"""
+Calculate the distance traveled by the robot
+Example:
+    Please enter robot movement: UP 3
+    Please enter robot movement: DOWN 3
+    Please enter robot movement: RIGHT 2
+    Please enter robot movement: LEFT 3
+    Please enter robot movement: END
+Output:
+    Distance is 1
+"""
+import math
+move = ''
+moves = []
+while True:
+    move = input('Please enter robot movement:')
+    if move != 'END':
+        moves.append(move)
+    else:
+        break
+X, Y = 0, 0        
+for move in moves:
+    direction, movement = move.split(' ')
+    movement = float(movement)
+    if direction == 'UP':
+        Y += movement
+    elif direction == 'DOWN':
+        Y -= movement
+    elif direction == 'RIGHT':
+        X += movement
+    elif direction == 'LEFT':
+        X -= movement
+distance = math.sqrt(X**2 + Y**2) 
+print(f'Distance is {distance}')
